@@ -1,0 +1,20 @@
+h2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: blue;
+}
+
+img {
+    width: 250px;
+    height: 400px;
+}
+
+.films-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+}
+
+.film-card {
+    text-align: center;
+}

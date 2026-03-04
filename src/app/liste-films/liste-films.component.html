@@ -1,0 +1,40 @@
+<h2>liste des films</h2>
+<!-- oolder method
+<div *ngFor="let film of tabFilms" style="margin-bottom:20px">
+
+    
+    <h3>{{ film.nomFilm }}</h3>
+
+   
+    <img [src]="film.imageFilm" width="200">
+
+  
+    <p *ngIf="film.disponible; else nonDispo" style="color:green">
+        Disponible
+    </p>
+
+    <ng-template #nonDispo>
+        <p style="color:red">Non disponible</p>
+    </ng-template>
+
+</div> -->
+<div class="films-container">
+    @for (film of tabFilms; track film) {
+    <div class="film-card" [ngStyle]="{'background-color': getColor(film.nbJaime, film.nbJeNaimeps)}">
+        <h3>{{ film.nomFilm }}</h3>
+        <img [src]="film.imageFilm" class="image">
+
+        @if (film.disponible) {
+        <p>Disponible</p>
+        } @else {
+        <p>Non disponible</p>
+        }
+
+        <button (click)="onJaime(tabFilms.indexOf(film))">J’aime</button>
+        <span>{{ film.nbJaime }}</span> <br />
+
+        <button (click)="onJaimePas(tabFilms.indexOf(film))">J’aime pas</button>
+        <span>{{ film.nbJeNaimeps }}</span>
+    </div>
+    }
+</div>
