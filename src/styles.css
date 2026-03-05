@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
-h2 {
+h2,
+h3 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 
 }
